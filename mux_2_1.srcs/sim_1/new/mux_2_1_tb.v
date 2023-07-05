@@ -36,17 +36,23 @@ module mux_2_1_tb();
     
     initial 
     begin 
-        sel = 0; in_a=1; in_b=0;
+        in_a=$random; in_b=$random;
+        sel = 0; 
+        #200;
+        sel = 1; in_a=$random; in_b=$random;
+        #200;
+        sel = 1; in_a=$random; in_b=$random;
+        #200;
+        sel = 0; in_a=$random; in_b=$random;
+        #200;
+        sel = 0; in_a=$random; in_b=$random;
         #100;
-        sel = 1; in_a=0; in_b=1;
+        sel = 1; in_a=$random; in_b=$random;
         #100;
-        sel = 1; in_a=1; in_b=0;
+        sel = 0; in_a=$random; in_b=$random;
         #100;
-        sel = 0; in_a=0; in_b=1;
-        #100;
-        sel = 0; in_a=0; in_b=1;
-        #100;
-        sel = 1; in_a=0; in_b=1;
+        sel = 1; in_a=$random; in_b=$random;
+        
 end 
 
 endmodule
